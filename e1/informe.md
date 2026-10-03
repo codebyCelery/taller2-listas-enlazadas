@@ -29,6 +29,7 @@ La primera línea sale correctamente en la segunda también se ve correcta la li
 ## B · Depura
 
 **Hipótesis del defecto** (cita la evidencia: salida observada vs. esperada):
+
 El error está en "eliminar()", cuando se elimina el último nodo se actualiza "siguiente" pero no se actualiza "Cola"
 
 **Corrección mínima (diff):**
