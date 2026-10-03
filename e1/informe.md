@@ -168,7 +168,7 @@ C.  Rpta.
 ## D · Defiende (preparación, no se entrega)
 
 1. **¿Qué invariante se rompía y en qué línea exacta?**
-   -Se rompía el invariante de que "cola" debe apuntar al último nodo de la lista
+   - Se rompía el invariante de que "cola" debe apuntar al último nodo de la lista
    Se rompe en: ant.Siguiente = ant.Siguiente.Siguiente
 
 2. **¿Por qué eliminar un nodo intermedio nunca revelaba el defecto?**
