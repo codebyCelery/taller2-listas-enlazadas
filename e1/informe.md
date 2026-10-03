@@ -39,16 +39,16 @@ en esta parte:
 			l.n--
 			return true
 se agrega:
-if ant.Siguiente == nil {
-    l.Cola = ant
+			if ant.Siguiente == nil {
+			 l.Cola = ant
 }
-resultado seria:
-ant.Siguiente = ant.Siguiente.Siguiente
-if ant.Siguiente == nil {
-    l.Cola = ant
-}
-l.n--
-return true
+el resultado seria:
+			ant.Siguiente = ant.Siguiente.Siguiente
+			if ant.Siguiente == nil {
+			 l.Cola = ant
+			}
+			l.n--
+			return true
 ```
 
 **Test que rompe el original** (nombre del test en `main_test.go` y por qué falla con el original):
