@@ -56,9 +56,7 @@ el resultado seria:
 
 ---
 package main
-
 import "testing"
-
 func TestEliminarUltimoActualizaCola(t *testing.T) {
     l := &Lista{}
     l.InsertarFinal(10)
