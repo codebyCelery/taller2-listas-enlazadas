@@ -10,13 +10,15 @@
 **Predicción (antes de ejecutar):** Escribe las dos líneas que imprime main (lista y valor de n).
 
 ```text
-(escribe aquí tu predicción)
+10 -> 30 -> 40 -> 50 -> nil  n = 4
+10 -> 30 -> 40 -> 60 -> nil  n = 4
 ```
 
 **Salida real (después de ejecutar):**
 
 ```text
-(pega aquí la salida de la terminal)
+10 -> 30 -> 40 -> 50 -> nil | n = 4
+10 -> 30 -> 40 -> nil | n = 4
 ```
 
 **Comparación:** en qué acerté y en qué no.
