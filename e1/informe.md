@@ -79,7 +79,7 @@ func TestEliminarUltimoActualizaCola(t *testing.T) {
 
 **Decisiones de diseño y justificación:**
 A.     
-if (l.Cabeza == nil) != (l.Cola == nil) {
+	if (l.Cabeza == nil) != (l.Cola == nil) {
         return fmt.Errorf("Cabeza y Cola no coinciden")
     }
 
@@ -102,7 +102,7 @@ if (l.Cabeza == nil) != (l.Cola == nil) {
     return nil
 }
 B. 
-func (l *Lista) EliminarUltimo() (int, error) {
+	func (l *Lista) EliminarUltimo() (int, error) {
     if l.Cabeza == nil {
         return 0, fmt.Errorf("lista vacía")
     }
@@ -129,7 +129,7 @@ func (l *Lista) EliminarUltimo() (int, error) {
     return valor, nil
 }
 C.  
-func TestLista(t *testing.T) {
+	func TestLista(t *testing.T) {
     l := &Lista{}
 
     l.InsertarFinal(10)
