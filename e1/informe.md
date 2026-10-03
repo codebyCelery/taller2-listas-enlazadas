@@ -68,7 +68,7 @@ func TestEliminarUltimoActualizaCola(t *testing.T) {
     if l.Cola.Valor != 20 {
         t.Errorf("esperaba Cola = 20, obtuvo %d", l.Cola.Valor)
     }
-}
+
 ---
 
 ## C · Construye
@@ -78,6 +78,7 @@ func TestEliminarUltimoActualizaCola(t *testing.T) {
 - [ C ] Llamar a Validar() después de cada operación en los tests
 
 **Decisiones de diseño y justificación:**
+
 A.  Rpta.
 ---
 	if (l.Cabeza == nil) != (l.Cola == nil) {
@@ -162,7 +163,7 @@ C.  Rpta.
     if err := l.Validar(); err != nil {
         t.Fatal(err)
     }
-}
+
 ---
 ## D · Defiende (preparación, no se entrega)
 
@@ -176,5 +177,5 @@ C.  Rpta.
 3. **Después de EliminarUltimo, ¿qué nodo debe quedar como Cola y cómo lo encuentras?**
    - Queda como Cola el penúltimo nodo, es decir, el último nodo que queda en la lista, se encuentra recorriendo la lista hasta que:
      actual.Siguiente == l.Cola
-     enotonces
+   Entonces
      l.Cola = actual
