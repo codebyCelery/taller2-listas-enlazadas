@@ -53,13 +53,14 @@ el resultado seria:
 ```
 
 **Test que rompe el original** (nombre del test en `main_test.go` y por qué falla con el original):
+
+---
 package main
 
 import "testing"
 
 func TestEliminarUltimoActualizaCola(t *testing.T) {
     l := &Lista{}
-
     l.InsertarFinal(10)
     l.InsertarFinal(20)
     l.InsertarFinal(30)
