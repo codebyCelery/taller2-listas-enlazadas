@@ -78,7 +78,8 @@ func TestEliminarUltimoActualizaCola(t *testing.T) {
 - [ C ] Llamar a Validar() después de cada operación en los tests
 
 **Decisiones de diseño y justificación:**
-A.     
+A.  Rpta.
+---
 	if (l.Cabeza == nil) != (l.Cola == nil) {
         return fmt.Errorf("Cabeza y Cola no coinciden")
     }
@@ -101,7 +102,10 @@ A.
 
     return nil
 }
-B. 
+---
+
+B. Rpta.
+---
 	func (l *Lista) EliminarUltimo() (int, error) {
     if l.Cabeza == nil {
         return 0, fmt.Errorf("lista vacía")
@@ -128,7 +132,9 @@ B.
 
     return valor, nil
 }
-C.  
+---
+C.  Rpta. 
+--- 
 	func TestLista(t *testing.T) {
     l := &Lista{}
 
