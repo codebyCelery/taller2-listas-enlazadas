@@ -78,7 +78,8 @@ func TestEliminarUltimoActualizaCola(t *testing.T) {
 - [ C ] Llamar a Validar() después de cada operación en los tests
 
 **Decisiones de diseño y justificación:**
-A.     if (l.Cabeza == nil) != (l.Cola == nil) {
+A.     
+if (l.Cabeza == nil) != (l.Cola == nil) {
         return fmt.Errorf("Cabeza y Cola no coinciden")
     }
 
@@ -100,7 +101,8 @@ A.     if (l.Cabeza == nil) != (l.Cola == nil) {
 
     return nil
 }
-B. func (l *Lista) EliminarUltimo() (int, error) {
+B. 
+func (l *Lista) EliminarUltimo() (int, error) {
     if l.Cabeza == nil {
         return 0, fmt.Errorf("lista vacía")
     }
@@ -126,7 +128,8 @@ B. func (l *Lista) EliminarUltimo() (int, error) {
 
     return valor, nil
 }
-C.  func TestLista(t *testing.T) {
+C.  
+func TestLista(t *testing.T) {
     l := &Lista{}
 
     l.InsertarFinal(10)
