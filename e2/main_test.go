@@ -4,7 +4,6 @@ import (
 	"testing"
 )
 
-
 func TestDesdeYString(t *testing.T) {
 	l := Desde(1, 2, 3)
 
@@ -13,7 +12,6 @@ func TestDesdeYString(t *testing.T) {
 		t.Errorf("Esperaba %q, obtuve %q", esperado, l.String())
 	}
 }
-
 
 func TestEliminarTodosCasosPrincipales(t *testing.T) {
 	// Caso 1: Elementos repetidos al inicio, medio y final
@@ -30,7 +28,6 @@ func TestEliminarTodosCasosPrincipales(t *testing.T) {
 	}
 }
 
-
 func TestEliminarTodosConsecutivosYEliminarTodo(t *testing.T) {
 	// Caso con muchos 7 al principio y en el medio
 	l := Desde(7, 7, 2, 7, 7, 7, 4)
@@ -46,7 +43,6 @@ func TestEliminarTodosConsecutivosYEliminarTodo(t *testing.T) {
 	}
 }
 
-
 func TestEliminarTodosNoExiste(t *testing.T) {
 	l := Desde(1, 2, 3)
 	borrados := l.EliminarTodos(99)
@@ -60,7 +56,6 @@ func TestEliminarTodosNoExiste(t *testing.T) {
 		t.Errorf("La lista no debería haber cambiado, obtuve %q", l.String())
 	}
 }
-
 
 func TestEliminarTodosListaVacia(t *testing.T) {
 	l := &Lista{}

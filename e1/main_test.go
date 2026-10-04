@@ -31,7 +31,6 @@ func TestEliminar(t *testing.T) {
 		l.InsertarFinal(v)
 	}
 
-	
 	if !l.Eliminar(20) {
 		t.Error("Debería haber eliminado el 20")
 	}
@@ -39,17 +38,14 @@ func TestEliminar(t *testing.T) {
 		t.Errorf("Esperaba longitud 3 tras eliminar, obtuve %d", l.Longitud())
 	}
 
-	
 	if !l.Eliminar(10) {
 		t.Error("Debería haber eliminado el 10 (cabeza)")
 	}
 
-	
 	if l.Eliminar(999) {
 		t.Error("No debería poder eliminar un valor que no existe")
 	}
 
-	
 	if !l.Eliminar(40) {
 		t.Error("Debería haber eliminado el 40")
 	}
@@ -66,7 +62,6 @@ func TestEliminar(t *testing.T) {
 	}
 }
 
-
 func TestEliminarListaVacia(t *testing.T) {
 	l := &Lista{}
 	if l.Eliminar(10) {
@@ -74,13 +69,11 @@ func TestEliminarListaVacia(t *testing.T) {
 	}
 }
 
-
 func TestColaActualizadaTrasEliminarCola(t *testing.T) {
 	l := &Lista{}
 	l.InsertarFinal(100)
 	l.InsertarFinal(200)
 
-	
 	l.Eliminar(200)
 
 	if l.Cola == nil || l.Cola.Valor != 100 {
