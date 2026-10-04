@@ -46,7 +46,7 @@ func Mezclar(a, b *Alumno) *Alumno {
 	centinela := &Alumno{}
 	cola := centinela
 	for a != nil && b != nil {
-		if a.Nota > b.Nota {
+		if a.Nota >= b.Nota {
 			cola.Siguiente, a = a, a.Siguiente
 		} else {
 			cola.Siguiente, b = b, b.Siguiente
