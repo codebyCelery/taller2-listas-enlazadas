@@ -1,17 +1,15 @@
 # Ejercicio 6: Merge Sort estable en lista
 
-**Responsable:** Celery · **Revisora (PR):** _______
+**Responsable:** Celery ·
 
 ---
 
 ## A · Predice
 > ⚠️ Escribe esta sección y haz **commit ANTES de ejecutar** el programa (`git log` es la evidencia).
 
-**Predicción (antes de ejecutar):** Escribe las dos líneas de main.
-
-```text
-(escribe aquí tu predicción)
-```
+**Predicción (antes de ejecutar):**
+Beto(18) Dani(16) Ana(14) Caro(11) 
+Eva(18) Beto(18) Fito(15) Caro(15) Ana(15) Dani(12)
 
 **Salida real (después de ejecutar):**
 
