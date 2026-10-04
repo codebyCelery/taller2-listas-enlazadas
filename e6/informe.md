@@ -1,6 +1,6 @@
 # Ejercicio 6: Merge Sort estable en lista
 
-**Responsable:** Celery ·
+**Responsable:** Celery
 
 ---
 
@@ -23,19 +23,23 @@ Eva(18) Beto(18) Fito(15) Caro(15) Ana(15) Dani(12)
 
 ## B · Depura
 
-**Hipótesis del defecto** (cita la evidencia: salida observada vs. esperada):
-- La corrección mínima cabe en un carácter.
+**Hipótesis del defecto** 
+Eva(18) se procesa antes que Beto(18) porque en la función Mezclar usas una condición de comparación estricta (if a.Nota > b.Nota). Esa condición resulta falsa cuando ambas notas son iguales ($18 > 18$). Por eso el programa entra en el bloque else y extrae primero el nodo de la sublista derecha b, donde se encuentra Eva. La lista derecha contiene los elementos que aparecían después en la secuencia original. Al dar prioridad a b cuando hay empate, se invierte el orden relativo de los alumnos con la misma nota, rompiendo la estabilidad del algoritmo. Para solucionarlo y mantener a Beto primero, la condición debe ser mayor o igual (a.Nota >= b.Nota). Así, ante un empate, el algoritmo siempre preserva el elemento de la sublista izquierda a.
 
 **Corrección mínima (diff):**
+-		if a.Nota > b.Nota {
++		if a.Nota >= b.Nota {
 
-```diff
-(pega aquí el diff)
-```
-
-**Test que rompe el original** (nombre del test en `main_test.go` y por qué falla con el original):
-
----
-
+**Test que rompe el original**
+Test que rompe el original: TestMergeSortIgualInsertionSort. Ordena los mismos datos con MergeSort e InsertionSort y exige que den exactamente el mismo orden, incluidos los empates. Con el código original falla en los casos 1 y 4, porque Mezclar usa > estricto y en un empate toma primero el nodo de la derecha, invirtiendo el orden original (por ejemplo, A B C sale como C B A). InsertionSort es estable y conserva ese orden, por eso los resultados difieren. Con >= el test pasa.
+*Evidencia:
+--- FAIL: TestMergeSortIgualInsertionSort (0.00s)
+    main_test.go:18: caso 1: MergeSort="Eva(18) Beto(18) Fito(15) Caro(15) Ana(15) Dani(12) " InsertionSort="Beto(18) Eva(18) Ana(15) Caro(15) Fito(15) Dani(12) "
+    main_test.go:18: caso 4: MergeSort="C(5) B(5) A(5) " InsertionSort="A(5) B(5) C(5) "
+FAIL
+FAIL    taller2/e6      0.011s
+*Después de la corrección (> por >=):
+ok      taller2/e6      0.003s
 ## C · Construye
 
 - [ ] InsertionSort estable sobre la misma lista
