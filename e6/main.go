@@ -79,3 +79,22 @@ func main() {
 	m := Desde(A("Ana", 15), A("Beto", 18), A("Caro", 15), A("Dani", 12), A("Eva", 18), A("Fito", 15))
 	fmt.Println(Str(MergeSort(m)))
 }
+func InsertionSort(c *Alumno) *Alumno {
+	var ordenada *Alumno
+	for c != nil {
+		sig := c.Siguiente
+		if ordenada == nil || c.Nota > ordenada.Nota {
+			c.Siguiente = ordenada
+			ordenada = c
+		} else {
+			p := ordenada
+			for p.Siguiente != nil && p.Siguiente.Nota >= c.Nota {
+				p = p.Siguiente
+			}
+			c.Siguiente = p.Siguiente
+			p.Siguiente = c
+		}
+		c = sig
+	}
+	return ordenada
+}
