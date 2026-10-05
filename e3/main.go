@@ -56,6 +56,43 @@ func (l *ListaDoble) Atras() string {
 	}
 	return s
 }
+//Implementaciones de la parte C
+func (l *ListaDoble) Validar() error {
+	if l.Cabeza == nil {
+		if l.Cola != nil {
+			return fmt.Errorf("lista vacía pero Cola no es nil")
+		}
+		return nil
+	}
+	if l.Cabeza.Anterior != nil {
+		return fmt.Errorf("la cabeza (%d) tiene un Anterior", l.Cabeza.Valor)
+	}
+	var ultimo *NodoDoble
+	for n := l.Cabeza; n != nil; n = n.Siguiente {
+		if n.Siguiente != nil && n.Siguiente.Anterior != n {
+			return fmt.Errorf("el nodo %d no es el Anterior de su siguiente (%d)", n.Valor, n.Siguiente.Valor)
+		}
+		ultimo = n
+	}
+	if l.Cola != ultimo {
+		return fmt.Errorf("Cola no apunta al último nodo (%d)", ultimo.Valor)
+	}
+	return nil
+}
+
+func (l *ListaDoble) EliminarNodo(n *NodoDoble) {
+	if n.Anterior != nil {
+		n.Anterior.Siguiente = n.Siguiente
+	} else {
+		l.Cabeza = n.Siguiente
+	}
+	if n.Siguiente != nil {
+		n.Siguiente.Anterior = n.Anterior
+	} else {
+		l.Cola = n.Anterior
+	}
+	n.Anterior, n.Siguiente = nil, nil
+}
 
 func main() {
 	l := &ListaDoble{}
