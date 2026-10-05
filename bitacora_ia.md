@@ -8,3 +8,7 @@
 | 04/10/2026 | Celery | E6 | Formato del informe.md y borrador de la sección C | Adapté el texto y lo subí |
 | 05/10/2026 | Madelein | E1 | Para armar correctamente la estructura y usarlo como orientación | lo use para revisar si mi respuesta estaba correcta |
 | 05/10/2026| Madelein | E2 | Lo use como apoyo para poder saber que pedían en cada ejercicio  | Lo use para corregir ciertas partes del código y para saber como poder formular mis respuestas |
+| 05/10/2026| Leticia | E3 | Lo utilicé para que me explicara el código porque en cierto punto ya no lograba entender  | Me sirvió para hacer mi predicción en la parte A y a adentrarme al código para encontrar el error |
+| 05/10/2026| Leticia | E3 | Sintaxis de los tests en Go (testing, t.Errorf) y datos de prueba.	| Ejecuté los tests y verifiqué FAIL con el original y ok con la corrección.
+| 05/10/2026| Leticia | E4 |  Lo utilicé para que me explicara el código porque en cierto punto ya no lograba entender   |  Me sirvió para formular mis respuestas a la hora de sustentar  |
+
