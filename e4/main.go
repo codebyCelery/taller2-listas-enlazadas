@@ -28,15 +28,22 @@ func Str(c *Nodo) string {
 	}
 	return s
 }
-
-// InvertirEnGrupos invierte bloques consecutivos de k nodos.
-// Especificación: si al final quedan menos de k nodos, ese bloque
-// final se deja en su orden original.
 func InvertirEnGrupos(cabeza *Nodo, k int) *Nodo {
 	centinela := &Nodo{Siguiente: cabeza}
 	colaPrevia := centinela
 	actual := cabeza
 	for actual != nil {
+		 //corrección
+		prueba := actual           
+		n := 0                      
+		for prueba != nil && n < k { 
+			prueba = prueba.Siguiente 
+			n++                       
+		} 
+		if n < k { 
+			break
+		} 
+		// fin de la corrección
 		inicioGrupo := actual
 		var ant *Nodo
 		cont := 0
