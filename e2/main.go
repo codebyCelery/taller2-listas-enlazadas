@@ -42,11 +42,11 @@ func (l *Lista) EliminarTodos(v int) int {
 	ant := l.Cabeza
 	for ant != nil && ant.Siguiente != nil {
 		if ant.Siguiente.Valor == v {
-			ant.Siguiente = ant.Siguiente.Siguiente
-			borrados++
-		}
-		ant = ant.Siguiente
-	}
+             ant.Siguiente = ant.Siguiente.Siguiente
+             borrados++
+         } else {
+             ant = ant.Siguiente
+         }
 	return borrados
 }
 
