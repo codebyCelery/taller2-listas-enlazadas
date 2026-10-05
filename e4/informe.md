@@ -57,6 +57,8 @@ Evidencia con el código original:
     main_test.go:9: InvertirEnGrupos(1..8, k=3)="3 2 1 6 5 4 8 7 "; se esperaba "3 2 1 6 5 4 7 8 "
 FAIL
 FAIL    taller2/e4      0.390s
+
+ok      taller2/e4      0.400s
 ```
 ---
 
