@@ -10,20 +10,30 @@
 **Predicción (antes de ejecutar):** Escribe las dos líneas de main (recorrido adelante | atrás).
 
 ```text
+Predicción (antes de ejecutar):
 
-
+A: 10 20 30 40 50  | B: 50 40 30 20 10
+A: 10 20 30 40 50  | B: 50 40 30 20 10
 ```
 
 **Salida real (después de ejecutar):**
 
 ```text
-(pega aquí la salida de la terminal)
+Salida real (después de ejecutar):
+
+A: 10 20 30 40 50  | B: 50 40 30 20 10
+A: 10 20 30 40 50  | B: 50 40 10
 ```
 
 **Comparación:** en qué acerté y en qué no.
-
----
-
+```text
+Mi predicción coincidió con la salida real en la primera línea, pero no en la segunda. Predije que en los dos casos la lista
+quedaría ordenada y que el recorrido hacia atrás sería el inverso exacto del recorrido hacia adelante, porque la función se llama
+InsertarOrdenado. En la segunda línea, el recorrido hacia adelante (A) sí salió bien, pero hacia atrás (B) salió 50 40 10: se
+saltó el 30 y el 20. Como A solo usa los punteros Siguiente y B solo usa los punteros Anterior, esto indica que los Siguiente
+son correctos y que el defecto está en algún puntero Anterior que no se actualiza. La primera línea sale bien porque, al insertar
+en orden, cada número va al final, donde no hay un nodo siguiente que deba apuntar de vuelta al nuevo. Esto es lo que corregiré en B.
+```
 ## B · Depura
 
 **Hipótesis del defecto** (cita la evidencia: salida observada vs. esperada):
@@ -32,7 +42,14 @@
 **Corrección mínima (diff):**
 
 ```diff
-(pega aquí el diff)
+ 	nuevo.Siguiente = actual.Siguiente
+ 	nuevo.Anterior = actual
+ 	actual.Siguiente = nuevo
+ 	if nuevo.Siguiente == nil {
+ 		l.Cola = nuevo
++	} else {
++		nuevo.Siguiente.Anterior = nuevo
+ 	}
 ```
 
 **Test que rompe el original** (nombre del test en `main_test.go` y por qué falla con el original):
