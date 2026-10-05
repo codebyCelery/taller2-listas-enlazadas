@@ -7,8 +7,6 @@
 **Predicción (antes de ejecutar):** Escribe las dos líneas de main (recorrido adelante | atrás).
 
 ```text
-Predicción (antes de ejecutar):
-
 A: 10 20 30 40 50  | B: 50 40 30 20 10
 A: 10 20 30 40 50  | B: 50 40 30 20 10
 ```
@@ -16,8 +14,6 @@ A: 10 20 30 40 50  | B: 50 40 30 20 10
 **Salida real (después de ejecutar):**
 
 ```text
-Salida real (después de ejecutar):
-
 A: 10 20 30 40 50  | B: 50 40 30 20 10
 A: 10 20 30 40 50  | B: 50 40 10
 ```
@@ -35,6 +31,7 @@ en orden, cada número va al final, donde no hay un nodo siguiente que deba apun
 
 **Hipótesis del defecto** (cita la evidencia: salida observada vs. esperada):
 - ¿Qué puntero queda desactualizado y en qué caso de inserción?
+  
  El defecto está en la inserción intermedia de InsertarOrdenado. Cuando el nuevo nodo queda entre dos nodos, el código actualiza nuevo.Siguiente, nuevo.Anterior y actual.Siguiente, pero no actualiza el puntero Anterior del nodo que queda después del nuevo. Ese nodo sigue apuntando hacia atrás a actual, como si el nuevo no existiera. Por ejemplo, al insertar el 30 entre el 10 y el 40, el 40 sigue apuntando hacia atrás al 10. Por eso el recorrido hacia adelante (Siguiente) es correcto, pero el recorrido hacia atrás (Anterior) se salta los nodos insertados en el medio. La primera línea de main sale bien porque, al insertar 10, 20, 30, 40, 50 en orden, cada nodo se agrega al final, donde no hay un nodo siguiente cuyo Anterior haya que actualizar. La corrección es agregar ese cuarto puntero cuando el nuevo nodo tiene un siguiente.
 
 **Corrección mínima (diff):**
