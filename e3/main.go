@@ -35,7 +35,10 @@ func (l *ListaDoble) InsertarOrdenado(v int) {
 	actual.Siguiente = nuevo
 	if nuevo.Siguiente == nil {
 		l.Cola = nuevo
-	}
+	}else{
+		nuevo.Siguiente.Anterior = nuevo
+		}
+	//este else es la correción
 }
 
 func (l *ListaDoble) Adelante() string {
