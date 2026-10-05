@@ -2,8 +2,6 @@ package main
 
 import "testing"
 
-// TestInvertirEnGruposBloqueIncompleto usa n=8, k=3 (n no es múltiplo de k).
-// Con el código original falla: el bloque incompleto [7 8] también se invierte.
 func TestInvertirEnGruposBloqueIncompleto(t *testing.T) {
 	obtenido := Str(InvertirEnGrupos(Desde(1, 2, 3, 4, 5, 6, 7, 8), 3))
 	esperado := "3 2 1 6 5 4 7 8 "
@@ -12,7 +10,6 @@ func TestInvertirEnGruposBloqueIncompleto(t *testing.T) {
 	}
 }
 
-// TestInvertirEnGruposCasos revisa otros casos de la especificación.
 func TestInvertirEnGruposCasos(t *testing.T) {
 	casos := []struct {
 		nombre   string
@@ -30,6 +27,31 @@ func TestInvertirEnGruposCasos(t *testing.T) {
 		obtenido := Str(InvertirEnGrupos(Desde(c.lista...), c.k))
 		if obtenido != c.esperado {
 			t.Errorf("%s: obtenido %q; se esperaba %q", c.nombre, obtenido, c.esperado)
+		}
+	}
+}
+
+func TestEsPalindromo(t *testing.T) {
+	casos := []struct {
+		nombre   string
+		lista    []int
+		esperado bool
+	}{
+		{"vacia", []int{}, true},
+		{"un nodo", []int{5}, true},
+		{"par", []int{1, 2, 2, 1}, true},
+		{"impar", []int{1, 2, 1}, true},
+		{"no palindromo", []int{1, 2, 3}, false},
+		{"casi", []int{1, 2, 3, 1}, false},
+	}
+	for _, c := range casos {
+		cab := Desde(c.lista...)
+		antes := Str(cab)
+		if got := EsPalindromo(cab); got != c.esperado {
+			t.Errorf("%s: EsPalindromo=%v; se esperaba %v", c.nombre, got, c.esperado)
+		}
+		if despues := Str(cab); despues != antes {
+			t.Errorf("%s: la lista cambió: %q -> %q", c.nombre, antes, despues)
 		}
 	}
 }
