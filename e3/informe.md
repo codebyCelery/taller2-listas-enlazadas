@@ -64,8 +64,8 @@ FAIL    taller2/e3      0.392s
 
 ## C · Construye
 
-- [☑] Validar() error (n.Siguiente == nil o n.Siguiente.Anterior == n; Cola es el último nodo)
-- [☑] EliminarNodo(n *NodoDoble): cabeza, cola y nodo único
+- [x] Validar() error (n.Siguiente == nil o n.Siguiente.Anterior == n; Cola es el último nodo)
+- [x] EliminarNodo(n *NodoDoble): cabeza, cola y nodo único
 
 **Decisiones de diseño y justificación:**
 
