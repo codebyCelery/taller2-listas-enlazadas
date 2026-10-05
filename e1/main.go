@@ -41,6 +41,9 @@ func (l *Lista) Eliminar(v int) bool {
 	for ant.Siguiente != nil {
 		if ant.Siguiente.Valor == v {
 			ant.Siguiente = ant.Siguiente.Siguiente
+			if ant.Siguiente == nil {
+			 l.Cola = ant
+			}
 			l.n--
 			return true
 		}
