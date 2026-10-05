@@ -60,6 +60,8 @@ Evidencia con el código original:
     main_test.go:13: Atras()="50 40 10 "; se esperaba "50 40 30 20 10 "
 FAIL
 FAIL    taller2/e3      0.392s
+
+ok      taller2/e3      0.380s
 ```
 
 ## C · Construye
