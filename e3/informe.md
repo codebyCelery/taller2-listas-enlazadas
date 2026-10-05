@@ -10,7 +10,8 @@
 **Predicción (antes de ejecutar):** Escribe las dos líneas de main (recorrido adelante | atrás).
 
 ```text
-(escribe aquí tu predicción)
+
+
 ```
 
 **Salida real (después de ejecutar):**
@@ -50,11 +51,11 @@
 ## D · Defiende (preparación, no se entrega)
 
 1. **¿Por qué el primer caso (10, 20, 30, 40, 50) funciona?**
-   - Mi respuesta (ensayo): 
+ Porque cada número es el mayor hasta ese momento, así que siempre se inserta al final. Al final no hay nodo después del nuevo, así que no hay ninguna flecha Anterior que actualizar. El caso 3 solo falla cuando el nuevo queda en el medio.
 
 2. **En una inserción intermedia, ¿qué cuatro punteros cambian?**
-   - Mi respuesta (ensayo): 
+nuevo.Siguiente (al nodo de después), nuevo.Anterior (a actual), actual.Siguiente (al nuevo) y nuevo.Siguiente.Anterior (el de después apunta de vuelta al nuevo). El código original solo hacía los tres primeros.
 
 3. **¿Qué punteros cambian al eliminar la cabeza, un nodo intermedio y la cola?**
-   - Mi respuesta (ensayo): 
+Cabeza: Cabeza pasa al segundo y su Anterior queda en nil. Intermedio: el anterior salta al siguiente (n.Anterior.Siguiente = n.Siguiente) y el siguiente apunta atrás al anterior (n.Siguiente.Anterior = n.Anterior). Cola: Cola pasa al penúltimo y su Siguiente queda en nil. Nodo único: Cabeza y Cola quedan en nil.
 
