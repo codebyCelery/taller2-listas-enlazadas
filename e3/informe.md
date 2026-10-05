@@ -52,12 +52,14 @@ en orden, cada número va al final, donde no hay un nodo siguiente que deba apun
 Inserta 40, 10, 30, 20, 50, que obliga a hacer inserciones intermedias, y exige que Atras() devuelva "50 40 30 20 10 ". Con el código original falla, porque el Anterior del nodo siguiente al insertado no se actualiza y Atras() devuelve "50 40 10 ". No se usa el caso 10, 20, 30, 40, 50, porque ahí todas las inserciones son al final y el test pasaría incluso con el defecto. Con la corrección, el test pasa.
 
 Evidencia con el código original:
-```text
+```
 --- FAIL: TestInsertarOrdenadoAtras (0.00s)
     main_test.go:13: Atras()="50 40 10 "; se esperaba "50 40 30 20 10 "
 FAIL
 FAIL    taller2/e3      0.392s
-
+```
+Después de la correción (agregar `nuevo.Siguiente.Anterior = nuevo`):
+```
 ok      taller2/e3      0.380s
 ```
 
