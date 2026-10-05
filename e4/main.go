@@ -60,7 +60,42 @@ func InvertirEnGrupos(cabeza *Nodo, k int) *Nodo {
 	}
 	return centinela.Siguiente
 }
+//Implementacion de la parte C
+func invertir(cabeza *Nodo) *Nodo {
+	var ant *Nodo
+	actual := cabeza
+	for actual != nil {
+		sig := actual.Siguiente
+		actual.Siguiente = ant
+		ant = actual
+		actual = sig
+	}
+	return ant
+}
 
+func EsPalindromo(cabeza *Nodo) bool {
+	if cabeza == nil || cabeza.Siguiente == nil {
+		return true
+	}
+	lento, rapido := cabeza, cabeza
+	for rapido.Siguiente != nil && rapido.Siguiente.Siguiente != nil {
+		lento = lento.Siguiente
+		rapido = rapido.Siguiente.Siguiente
+	}
+	segunda := invertir(lento.Siguiente)
+	es := true
+	a, b := cabeza, segunda
+	for b != nil {
+		if a.Valor != b.Valor {
+			es = false
+			break
+		}
+		a = a.Siguiente
+		b = b.Siguiente
+	}
+	lento.Siguiente = invertir(segunda)
+	return es
+}
 func main() {
 	fmt.Println(Str(InvertirEnGrupos(Desde(1, 2, 3, 4, 5, 6), 3)))
 	fmt.Println(Str(InvertirEnGrupos(Desde(1, 2, 3, 4, 5, 6, 7, 8), 3)))
