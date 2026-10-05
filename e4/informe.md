@@ -52,12 +52,16 @@ El defecto está en InvertirEnGrupos. El for interno invierte nodos "mientras ha
 Invierte la lista 1, 2, 3, 4, 5, 6, 7, 8 con k = 3 y exige que el resultado sea "3 2 1 6 5 4 7 8 ". Con el código original falla, porque el bloque incompleto [7 8] también se invierte y el resultado es "3 2 1 6 5 4 8 7 ". No se usa el caso de 6 nodos, porque 6 es múltiplo de 3 y el test pasaría incluso con el defecto. Con la corrección, el bloque incompleto no se toca y el test pasa.
 
 Evidencia con el código original:
- ```text
+ ```
 --- FAIL: TestInvertirEnGruposBloqueIncompleto (0.00s)
     main_test.go:9: InvertirEnGrupos(1..8, k=3)="3 2 1 6 5 4 8 7 "; se esperaba "3 2 1 6 5 4 7 8 "
 FAIL
 FAIL    taller2/e4      0.390s
+```
 
+Después de la corrección (verificar que quedan `k` nodos antes de invertir):
+
+```
 ok      taller2/e4      0.400s
 ```
 ---
