@@ -33,16 +33,16 @@ func InvertirEnGrupos(cabeza *Nodo, k int) *Nodo {
 	colaPrevia := centinela
 	actual := cabeza
 	for actual != nil {
-		 //corrección
-		prueba := actual           
-		n := 0                      
-		for prueba != nil && n < k { 
-			prueba = prueba.Siguiente 
-			n++                       
-		} 
-		if n < k { 
+		//corrección
+		prueba := actual
+		n := 0
+		for prueba != nil && n < k {
+			prueba = prueba.Siguiente
+			n++
+		}
+		if n < k {
 			break
-		} 
+		}
 		// fin de la corrección
 		inicioGrupo := actual
 		var ant *Nodo
@@ -60,7 +60,8 @@ func InvertirEnGrupos(cabeza *Nodo, k int) *Nodo {
 	}
 	return centinela.Siguiente
 }
-//Implementacion de la parte C
+
+// Implementacion de la parte C
 func invertir(cabeza *Nodo) *Nodo {
 	var ant *Nodo
 	actual := cabeza

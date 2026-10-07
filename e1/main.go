@@ -42,7 +42,7 @@ func (l *Lista) Eliminar(v int) bool {
 		if ant.Siguiente.Valor == v {
 			ant.Siguiente = ant.Siguiente.Siguiente
 			if ant.Siguiente == nil {
-			 l.Cola = ant
+				l.Cola = ant
 			}
 			l.n--
 			return true

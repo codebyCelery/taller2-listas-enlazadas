@@ -35,9 +35,9 @@ func (l *ListaDoble) InsertarOrdenado(v int) {
 	actual.Siguiente = nuevo
 	if nuevo.Siguiente == nil {
 		l.Cola = nuevo
-	}else{
+	} else {
 		nuevo.Siguiente.Anterior = nuevo
-		}
+	}
 	//este else es la correción
 }
 
@@ -56,7 +56,8 @@ func (l *ListaDoble) Atras() string {
 	}
 	return s
 }
-//Implementaciones de la parte C
+
+// Implementaciones de la parte C
 func (l *ListaDoble) Validar() error {
 	if l.Cabeza == nil {
 		if l.Cola != nil {
