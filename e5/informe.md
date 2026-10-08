@@ -32,14 +32,19 @@ Acerté en la primera línea y en el comienzo de la segunda (P1@t=2 y P2@t=4), p
 **Hipótesis del defecto** (cita la evidencia: salida observada vs. esperada):
 
 * ¿En qué nodo queda ant justo después de retirar un proceso?
+  Observada: [P1@t=2 P2@t=4 P2@t=6]. Esperada: [P1@t=2 P2@t=4 P3@t=9]. Al terminar un proceso, ant avanza al nodo ya desenlazado (nodo fantasma); si el siguiente también termina, se desenlaza desde el fantasma y la lista real no cambia: P2 se repite y P3 nunca termina. En el primer caso no pasa porque entre dos finalizaciones corre un proceso que no termina y reubica ant.
 
 **Corrección mínima (diff):**
 
 ```diff
-(pega aquí el diff)
+-        ant = act
++        if act.Tiempo != 0 {
++            ant = act
++        }
 ```
 
 **Test que rompe el original** (nombre del test en `main_test.go` y por qué falla con el original):
+TestDosTerminanSeguidos: con P1:2, P2:2, P3:5 y quantum 2, exige [P1@t=2 P2@t=4 P3@t=9]. El original falla porque da [P1@t=2 P2@t=4 P2@t=6]: P1 y P2 terminan seguidos y ant queda en un nodo fantasma. No usa el primer caso de main porque ahí pasa aunque exista el defecto.
 
 ---
 
