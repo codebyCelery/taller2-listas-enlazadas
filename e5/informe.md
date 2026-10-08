@@ -1,30 +1,31 @@
 # Ejercicio 5: Planificador Round Robin
 
-**Responsable:** Yeongmi · **Revisora (PR):** \_\_\_\_\_\_\_
+**Responsable:** Yeongmi · **Revisora (PR):** _______
 
-\---
+---
 
 ## A · Predice
 
-> ⚠️ Escribe esta sección y haz \*\*commit ANTES de ejecutar\*\* el programa (`git log` es la evidencia).
+> ⚠️ Escribe esta sección y haz **commit ANTES de ejecutar** el programa (`git log` es la evidencia).
 
 **Predicción (antes de ejecutar):** Escribe las dos líneas de main (nombre@tiempo de cada proceso).
 
 ```text
-   \[P2@t=10 P1@t=14 P3@t=18]
-
-&#x20;  \[P1@t=2 P2@t=4 P3@t=9]
+[P2@t=10 P1@t=14 P3@t=18]
+[P1@t=2 P2@t=4 P3@t=9]
 ```
 
 **Salida real (después de ejecutar):**
 
 ```text
-(pega aquí la salida de la terminal)
+[P2@t=10 P1@t=14 P3@t=18]
+[P1@t=2 P2@t=4 P2@t=6]
 ```
 
 **Comparación:** en qué acerté y en qué no.
+Acerté en la primera línea y en el comienzo de la segunda (P1@t=2 y P2@t=4), pero no en el final: yo esperaba P3@t=9 y el programa imprimió P2@t=6, o sea P2 repetido y P3 nunca terminó. Como mi predicción seguía lo que debería hacer un Round Robin correcto, la diferencia revela un defecto en la lista circular: cuando P1 y P2 terminan seguidos, ant avanza hacia un nodo ya desenlazado y el siguiente borrado se hace en el lugar equivocado.
 
-\---
+---
 
 ## B · Depura
 
@@ -38,19 +39,19 @@
 (pega aquí el diff)
 ```
 
-**Test que rompe el original** (nombre del test en `main\_test.go` y por qué falla con el original):
+**Test que rompe el original** (nombre del test en `main_test.go` y por qué falla con el original):
 
-\---
+---
 
 ## C · Construye
 
-* \[ ] Soportar llegadas: (nombre, llegada, ráfaga); entra a la cola cuando reloj ≥ llegada
-* \[ ] Decidir y justificar dónde se inserta un proceso que llega respecto a act
-* \[ ] Retornar también el tiempo de espera promedio
+* [ ] Soportar llegadas: (nombre, llegada, ráfaga); entra a la cola cuando reloj ≥ llegada
+* [ ] Decidir y justificar dónde se inserta un proceso que llega respecto a act
+* [ ] Retornar también el tiempo de espera promedio
 
 **Decisiones de diseño y justificación:**
 
-\---
+---
 
 ## D · Defiende (preparación, no se entrega)
 
