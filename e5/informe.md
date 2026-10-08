@@ -1,16 +1,19 @@
 # Ejercicio 5: Planificador Round Robin
 
-**Responsable:** Yeongmi · **Revisora (PR):** _______
+**Responsable:** Yeongmi · **Revisora (PR):** \_\_\_\_\_\_\_
 
----
+\---
 
 ## A · Predice
-> ⚠️ Escribe esta sección y haz **commit ANTES de ejecutar** el programa (`git log` es la evidencia).
+
+> ⚠️ Escribe esta sección y haz \*\*commit ANTES de ejecutar\*\* el programa (`git log` es la evidencia).
 
 **Predicción (antes de ejecutar):** Escribe las dos líneas de main (nombre@tiempo de cada proceso).
 
 ```text
-(escribe aquí tu predicción)
+   \[P2@t=10 P1@t=14 P3@t=18]
+
+&#x20;  \[P1@t=2 P2@t=4 P3@t=9]
 ```
 
 **Salida real (después de ejecutar):**
@@ -21,12 +24,13 @@
 
 **Comparación:** en qué acerté y en qué no.
 
----
+\---
 
 ## B · Depura
 
 **Hipótesis del defecto** (cita la evidencia: salida observada vs. esperada):
-- ¿En qué nodo queda ant justo después de retirar un proceso?
+
+* ¿En qué nodo queda ant justo después de retirar un proceso?
 
 **Corrección mínima (diff):**
 
@@ -34,28 +38,29 @@
 (pega aquí el diff)
 ```
 
-**Test que rompe el original** (nombre del test en `main_test.go` y por qué falla con el original):
+**Test que rompe el original** (nombre del test en `main\_test.go` y por qué falla con el original):
 
----
+\---
 
 ## C · Construye
 
-- [ ] Soportar llegadas: (nombre, llegada, ráfaga); entra a la cola cuando reloj ≥ llegada
-- [ ] Decidir y justificar dónde se inserta un proceso que llega respecto a act
-- [ ] Retornar también el tiempo de espera promedio
+* \[ ] Soportar llegadas: (nombre, llegada, ráfaga); entra a la cola cuando reloj ≥ llegada
+* \[ ] Decidir y justificar dónde se inserta un proceso que llega respecto a act
+* \[ ] Retornar también el tiempo de espera promedio
 
 **Decisiones de diseño y justificación:**
 
----
+\---
 
 ## D · Defiende (preparación, no se entrega)
 
 1. **¿Qué es un “nodo fantasma” en el código original y cómo vuelve a ejecutarse?**
-   - Mi respuesta (ensayo): 
 
+   * Mi respuesta (ensayo):
 2. **¿Por qué el primer caso da el resultado correcto?**
-   - Mi respuesta (ensayo): 
 
+   * Mi respuesta (ensayo):
 3. **¿Cómo cambiaría la salida con quantum = 1? ¿Y con un quantum mayor que todas las ráfagas?**
-   - Mi respuesta (ensayo): 
+
+   * Mi respuesta (ensayo):
 
