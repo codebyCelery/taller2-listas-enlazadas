@@ -41,7 +41,9 @@ func (p *Planificador) Ejecutar(quantum int) []string {
 			ant.Siguiente = act.Siguiente // desenlaza el proceso terminado
 			p.Tamanio--
 		}
-		ant = act
+		if act.Tiempo != 0 {
+			ant = act
+		}
 		act = act.Siguiente
 	}
 	p.Cola = nil
